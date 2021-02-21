@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titlefont">{{'PLAYER.title' | translate}}</ion-title>
+    <ion-button (click)="this.exit()" fill="outline" color="danger">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <div class="header">
+    <div class="avatar">
+      <img src={{player.image}} alt="">
+
+    </div>
+  </div>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="card">
+
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h3 class="playername">{{this.player.name}}</h3>
+        <h5 class="country">{{this.teamname}}</h5>
+        
+        
+      </div>
+      <ion-grid style="color: black;" class="titlefont2">
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/goals.png"></ion-img>{{player.goals}}<br>{{'PLAYER.goals' | translate}}
+            </h3>
+
+
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/assits.png"></ion-img>{{player.assists}}<br>{{'PLAYER.assits' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/field.png"></ion-img>{{player.games}}<br>{{'PLAYER.games' | translate}}
+            </h3>
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/star.png"></ion-img>{{player.mvp}}<br>{{'PLAYER.mvp' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/yellow.png"></ion-img>{{player.yellowcards}}<br>{{'PLAYER.yellow' | translate}}
+            </h3>
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/red.png"></ion-img>{{player.redcards}}<br>{{'PLAYER.red' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+  </div>
+
+
+</ion-content>

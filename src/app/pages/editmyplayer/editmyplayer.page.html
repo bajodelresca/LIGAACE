@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>newteam</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animate__animated animate__fadeInRight">
+  <div style="display: flex; justify-content: center;">
+    <ion-avatar class="avatarimg" (click)="this.setAvatar()">
+      <ion-img [src]=this.photo></ion-img>
+    </ion-avatar>      
+  </div> 
+  
+<form id="form" [formGroup]="newteam" (ngSubmit)="this.sendForm()">
+
+<ion-item>
+  <ion-icon slot="start" name="person"></ion-icon>
+  <ion-input formControlName="name" placeholder="nombre"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-icon slot="start" name="mail"></ion-icon>
+  <ion-input formControlName="email" placeholder="email"></ion-input>
+</ion-item>
+
+<ion-button type="submit" expand="block">register</ion-button>
+</form>
+
+
+</ion-content>

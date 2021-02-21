@@ -1,0 +1,134 @@
+{
+    "PLAYERS":{
+        "title":"Players",
+        "games":"Games",
+        "goals":"Goals",
+        "assists":"Assists"
+
+    },
+    "TEAMS":{
+        "title":"Teams",
+        "tab2":"Add",
+        "tab3":"Profile"
+    },
+    "CLASIFICATION":{
+        "title":"Classification",
+        "teams":"TEAMS",
+        "PG":"W",
+        "PJ":"PL",
+        "PP":"L",
+        "PE":"D",
+        "GF":"GF",
+        "GC":"GA",
+        "PT":"PT"
+    },
+    "MATCH":{
+        "title":"Matches",
+        "language":"Selected Language",        
+        "dark":"Dark Mode",
+        "blue":"Blue Mode",
+        "orange":"Orange Mode",
+        "flash": "Flash",
+        "logout":"Logout"
+    },
+
+    "SEARCH":{
+        "title":"Search"
+        
+    },
+    "PLAYER":{
+        "title":"Player",
+        "goals":"Goals",
+        "assits":"Assists",
+        "games":"Games",
+        "mvp":"MVP",
+        "yellow":"Yellows",
+        "red":"Reds"
+        
+    },
+
+    "TEAM":{
+        "fecha":"Create in",
+        "title":"Team",
+        "goals":"Goals",
+        "ganados":"Won",
+        "perdidos":"Lost",
+        "empatados":"Draw",
+        "jugados":"Played",
+        "goalsc":"against",
+        "player":"Players"
+        
+    },
+    "MENU":{
+        "Home":"Home",
+        "Profile":"Profile",
+        "settings":"Settings",
+        "about":"About us"
+        
+        
+    },
+
+    "SETTINGS":{
+        "title":"Settings",
+        "language":"Language",
+        "Logout":"Logout",
+        "close":"Delete my account"
+        
+        
+    },
+    "ABOUT":{
+        "title":"About us"
+        
+        
+        
+    },
+
+    "NEWTEAM":{
+        "title":"New team",
+        "text":"Creating a new team...",
+        "name":"Name",
+        "createdate":"Create date",
+        "create":"Create"
+        
+        
+        
+    },
+    "NEWPLAYER":{
+        "title":"Editing player",
+        "text":"Editing player...",
+        "name":"Name",
+        "createdate":"Email",
+        "create":"Edit"
+        
+        
+        
+    },
+    "LOGIN":{
+        "email":"Email",
+        "pass":"Password",
+        "log":"Log in",
+        "entrar":"It's not registered?"
+        
+        
+        
+    },
+
+    "REGISTER":{
+        "email":"Email",
+        "pass":"Password",
+        "log":"Register",
+        "name":"Name"
+        
+        
+        
+    },
+    "TABSOP":{
+        "tab1":"Classification",
+        "tab2":"Calendar",
+        "tab3":"Teams",
+        "tab4":"Players"
+        
+        
+        
+    }
+}

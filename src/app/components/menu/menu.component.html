@@ -1,0 +1,42 @@
+<ion-menu menuId="main-menu" content-id="main" (ionWillOpen)="this.loadPlayer()">
+  <ion-header style="text-align:center !important; height: 175px;">
+    <ion-toolbar style="height: 100%;">
+      <div style="display: flex; justify-content: center;">
+        <ion-avatar class="avatarimg" (click)="this.setAvatar()">
+          <ion-img [src]=this.player.image></ion-img>
+        </ion-avatar>
+      </div>
+      <ion-label>{{this.player.name}}</ion-label>
+      <!--<ion-label style="font-size: 90%;   color: #949ea6;">{{this.teamname}}</ion-label>-->
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-icon name="home" slot="start"></ion-icon>
+          <ion-label>{{'MENU.Home' | translate}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="myplayer">
+          <ion-icon name="person-circle" slot="start"></ion-icon>
+          <ion-label>{{'MENU.Profile' | translate}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="setting">
+          <ion-icon name="cog" slot="start"></ion-icon>
+          <ion-label>{{'MENU.settings' | translate}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="about">
+          <ion-icon name="information-circle" slot="start"></ion-icon>
+          <ion-label>{{'MENU.about' | translate}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>

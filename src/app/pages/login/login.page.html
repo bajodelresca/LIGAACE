@@ -1,0 +1,20 @@
+<ion-content class="animate__animated animate__zoomIn">
+  <div style="display: flex; justify-content: center;">
+    <ion-img class="loginimg" src="./assets/img/logo.png"></ion-img>
+  </div>
+  <form id="form" [formGroup]="existplayer" (ngSubmit)="this.sendForm()">
+
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-input formControlName="email" placeholder="{{'LOGIN.email' | translate}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="key"></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="{{'LOGIN.pass' | translate}}"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block">{{'LOGIN.log' | translate}}</ion-button>
+  </form>
+  <div style="display: flex; justify-content: center;">
+    <a [routerLink]="['/register']" class="small-text" style="margin: auto; margin-top: 10px;">{{'LOGIN.entrar' | translate}}</a>
+  </div>
+</ion-content>

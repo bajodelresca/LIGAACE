@@ -1,0 +1,23 @@
+<ion-content class="animate__animated animate__fadeInRight">
+  <div style="display: flex; justify-content: center;">
+    <ion-img class="loginimg" src="./assets/img/logo.png"></ion-img>
+  </div>
+<form id="form" [formGroup]="newplayer" (ngSubmit)="this.sendForm()">
+
+<ion-item>
+  <ion-icon slot="start" name="person"></ion-icon>
+  <ion-input formControlName="name" placeholder="{{'REGISTER.name' | translate}}"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-icon slot="start" name="mail"></ion-icon>
+  <ion-input formControlName="email" placeholder="{{'REGISTER.email' | translate}}"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-icon slot="start" name="key"></ion-icon>
+  <ion-input formControlName="password" type="password" placeholder="{{'REGISTER.pass' | translate}}"></ion-input>
+</ion-item>
+<ion-button  [disabled]="!newplayer.valid" type="submit" expand="block">{{'REGISTER.log' | translate}}</ion-button>
+</form>
+
+
+</ion-content>

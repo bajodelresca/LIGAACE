@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titlefont">
+      {{'CLASIFICATION.title' | translate}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row style="font-weight: bold;">
+    <ion-col size="1">
+      
+      
+    </ion-col>
+    <ion-col size="4">
+      {{'CLASIFICATION.teams' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.PT' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.PJ' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.PG' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.PE' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.PP' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.GF' | translate}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{'CLASIFICATION.GC' | translate}}
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let Team of listado" >
+    <ion-col size="1">
+     
+        <ion-img class="teamimg2" src={{Team.image}}></ion-img>
+      
+    </ion-col>
+    <ion-col size="4">
+      {{Team.name}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.points}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.games}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.matcheswon}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.tiedmatches}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.lostmatches}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.goals}}
+    </ion-col>
+    <ion-col size="1" style="text-align: center;">
+      {{Team.goalsc}}
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

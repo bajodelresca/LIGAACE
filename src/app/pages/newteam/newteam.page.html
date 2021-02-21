@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{'NEWTEAM.title' | translate}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animate__animated animate__fadeInRight">
+  <h3 class="titlefont" style="color: white; text-align: center; padding-bottom: 30px; padding-top: 150px;">{{'NEWTEAM.text' | translate}}</h3>
+  
+  
+<form id="form" [formGroup]="newteam" (ngSubmit)="this.sendForm()">
+
+<ion-item>
+  <ion-icon slot="start" name="text"></ion-icon>
+  <ion-input formControlName="name" placeholder="{{'NEWTEAM.name' | translate}}"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-icon slot="start" name="calendar"></ion-icon>
+  <ion-input formControlName="createdate" placeholder="{{'NEWTEAM.createdate' | translate}}"></ion-input>
+</ion-item>
+
+<ion-button [disabled]="!newteam.valid" type="submit" expand="block">{{'NEWTEAM.create' | translate}}</ion-button>
+</form>
+
+
+</ion-content>

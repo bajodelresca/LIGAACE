@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <!--<ion-icon name="arrow-back-circle" slot="start" style="zoom:2.0;" class="icontitle" (click)="this.exit()"></ion-icon>-->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titlefont">{{'SETTINGS.title' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">  
+  <h3 class="titlefont">Idioma</h3>
+    <ion-item class="pad">
+      <ion-icon name="language-sharp" style="padding-right: 15px;"></ion-icon>
+      <ion-label>{{'SETTINGS.language' | translate}}</ion-label>
+      <ion-select placeholder="{{lnga}}" [(ngModel)]="lang" (ionChange)="switchLanguage($event)" interface="action-sheet" >
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <h3 class="titlefont">{{'SETTINGS.Logout' | translate}}</h3>
+    <ion-item (click)="this.logout()">
+      <ion-icon name="exit" slot="start"></ion-icon>
+      <ion-label>{{'SETTINGS.Logout' | translate}}</ion-label>
+    </ion-item>
+    <h3 class="titlefont">{{'SETTINGS.close' | translate}}</h3>
+    <ion-item (click)="this.presentAlert(Player)">
+      <ion-icon name="trash" slot="start"></ion-icon>
+      <ion-label>{{'SETTINGS.close' | translate}}</ion-label>
+    </ion-item>
+ 
+  
+</ion-content>
+

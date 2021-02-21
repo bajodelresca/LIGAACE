@@ -1,0 +1,136 @@
+{
+    "PLAYERS":{
+        "title":"Jugadores",
+        "games":"Partidos jugados",
+        "goals":"Goles",
+        "assists":"Asistencias"
+
+    },
+    "TEAMS":{
+        "title":"Equipos",
+        "tab2":"Add",
+        "tab3":"Profile"
+    },
+    "CLASIFICATION":{
+        "title":"Clasificación",
+        "teams":"EQUIPO",
+        "PG":"PG",
+        "PJ":"PJ",
+        "PP":"PP",
+        "PE":"PE",
+        "GF":"GF",
+        "GC":"GC",
+        "PT":"PT"
+    },
+    "MATCH":{
+        "title":"Encuentros",
+        "language":"Selected Language",        
+        "dark":"Dark Mode",
+        "blue":"Blue Mode",
+        "orange":"Orange Mode",
+        "flash": "Flash",
+        "logout":"Logout"
+    },
+
+    "SEARCH":{
+        "title":"Buscar"
+        
+    },
+    "PLAYER":{
+        "title":"Jugador",
+        "goals":"Goles",
+        "assits":"Asistencias",
+        "games":"Partidos",
+        "mvp":"MVP",
+        "yellow":"T. Amarillas",
+        "red":"T. Rojas"
+        
+    },
+
+    "TEAM":{
+        "fecha":"Fundado en",
+        "title":"Equipo",
+        "goals":"Goles",
+        "ganados":"P. Ganados",
+        "perdidos":"P. Perdidos",
+        "empatados":"P. Empatados",
+        "jugados":"P. Jugados",
+        "goalsc":"En contra",
+        "player":"Jugadores"
+        
+    },
+    "MENU":{
+        "Home":"Inicio",
+        "Profile":"Perfil",
+        "settings":"Ajustes",
+        "about":"Sobre nosotros"
+        
+        
+    },
+
+    "SETTINGS":{
+        "title":"Ajustes",
+        "language":"Idioma",
+        "Logout":"Cerrar sesión",
+        "close":"Eliminar mi cuenta"
+        
+        
+    },
+    "ABOUT":{
+        "title":"Sobre nosotros"
+        
+        
+        
+    },
+
+    "NEWTEAM":{
+        "title":"Nuevo Equipo",
+        "text":"Creando un nuevo equipo...",
+        "name":"Nombre",
+        "createdate":"Fecha de fundación",
+        "create":"Crear"
+        
+        
+        
+    },
+    "NEWPLAYER":{
+        "title":"Editando jugador",
+        "text":"Editando un jugador...",
+        "name":"Nombre",
+        "createdate":"Email",
+        "create":"Editar"
+        
+        
+        
+    },
+    "LOGIN":{
+        "email":"Email",
+        "pass":"Contraseña",
+        "log":"Entrar",
+        "entrar":"¿No está registrado?"
+        
+        
+        
+    },
+
+    "REGISTER":{
+        "email":"Email",
+        "pass":"Contraseña",
+        "log":"Registrar",
+        "name":"Nombre"
+        
+        
+        
+    },
+    "TABSOP":{
+        "tab1":"Clasificación",
+        "tab2":"Calendario",
+        "tab3":"Equipos",
+        "tab4":"Jugadores"
+        
+        
+        
+    }
+
+
+}

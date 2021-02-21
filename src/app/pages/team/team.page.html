@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titlefont">{{'TEAM.title' | translate}}</ion-title>
+    <ion-button (click)="this.exit()" fill="outline" color="danger">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-icon name="person-add"  slot="end" style="padding-right: 18px;" (click)="this.presentAlert()"></ion-icon>
+  </ion-toolbar>
+  <div class="header">
+    <div class="avatar" (click)="this.setAvatar()">
+      <img src={{this.team.image}} alt="">
+
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="this.cargaDatos($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="card">
+
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h3 class="playername">{{this.team.name}}</h3>
+        <h5 class="country">{{'TEAM.fecha' | translate}} {{this.team.createdate}}</h5>
+        
+        
+      </div>
+      <ion-grid style="color: black;" class="titlefont2">
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/field.png"></ion-img>{{team.games}}<br>{{'TEAM.jugados' | translate}}
+            </h3>
+
+
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/doble-tick.png"></ion-img>{{team.matcheswon}}<br>{{'TEAM.ganados' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/eliminar.png"></ion-img>{{team.lostmatches}}<br>{{'TEAM.perdidos' | translate}}
+            </h3>
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/cancelar.png"></ion-img>{{team.triedmatches}}<br>{{'TEAM.empatados' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/goals.png"></ion-img>{{team.goals}}<br>{{'TEAM.goals' | translate}}
+            </h3>
+          </ion-col>
+          <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
+            <h3>
+              <ion-img style="height: 25px; " src="./assets/img/gol.png"></ion-img>{{team.goalsc}}<br>{{'TEAM.goalsc' | translate}}
+            </h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <h3 class="titlefont" style="color: black; text-align: center; padding-bottom: 30px;">{{'TEAM.player' | translate}}</h3>
+      <ion-item-sliding *ngFor="let Player of listado">
+        <ion-item-options side="start" (click)="editPlayer(Player)">
+          <ion-item-option color="primary">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        <ion-item>
+          <ion-avatar slot="start">
+            <ion-img src={{Player.image}}></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{Player.name}}</h2>
+            <h3>{{Player.games}} partidos jugados</h3>
+            <p>{{Player.goals}} goles {{Player.assists}} asistencias </p>
+          </ion-label>
+          <ion-icon name="eye" slot="end" class="see" (click)="this.openPlayer(Player)"></ion-icon>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="this.presentAlert(Player)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+
+  </div>
+  
+ 
+</ion-content>

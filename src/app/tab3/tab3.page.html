@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titlefont">
+      {{'TEAMS.title' | translate}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar #input showCancelButton="focus" debounce="500" (ionChange)="searchTeam($event)" placeholder="{{'SEARCH.title' | translate}}"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+ 
+  
+  <ion-list>
+    <!--<ion-list-header>      
+    </ion-list-header>-->
+    
+
+    <ion-item-sliding *ngFor="let Team of listado" >
+      <ion-item-options side="start" (click)="editTeam(Team)">
+        <ion-item-option color="primary">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item (click)="this.openTeam(Team)">
+      <ion-card style="width: 100%;">
+        <div style="display: flex; justify-content: center;">
+          <ion-img class="teamimg" src={{Team.image}}></ion-img>
+        </div>
+        <ion-card-header>
+          <ion-card-subtitle>Division</ion-card-subtitle>
+          <ion-card-title>{{Team.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{Team.createdate}}
+        </ion-card-content>
+      </ion-card> 
+    </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="presentAlert(Team)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    
+
+    
+  </ion-list>
+  <ion-fab routerLink="/newteam" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
