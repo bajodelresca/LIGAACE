@@ -20,7 +20,7 @@ export class AuthService implements CanActivate {
     mvp: 0,
     redcards: 0,
     yellowcards: 0,
-    idequipo: 0
+    team: null
   }
 
   constructor(private storage: NativeStorage,
@@ -60,7 +60,7 @@ export class AuthService implements CanActivate {
       mvp: 0,
       redcards: 0,
       yellowcards: 0,
-      idequipo: 0
+      team:null
     }
     await this.storage.setItem("user", this.Player);
   }
@@ -80,7 +80,7 @@ export class AuthService implements CanActivate {
           mvp: u['mvp'],
           redcards: u['redcards'],
           yellowcards: u['yellowcards'],
-          idequipo: u['idequipo']
+          team: u['team']
 
         }
         
@@ -98,7 +98,7 @@ export class AuthService implements CanActivate {
       mvp: 0,
       redcards: 0,
       yellowcards: 0,
-      idequipo: 0
+      team: null
       }
     }
     await this.storage.setItem("user", this.Player);

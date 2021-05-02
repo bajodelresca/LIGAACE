@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  endpoint:'https://ligaace.herokuapp.com/',
+  endpoint:'https://pruebaadrii898.herokuapp.com/',
   apiPlayer:'player/',
-  apiTeam:'team/'
+  apiTeam:'team/',
+  apiGame:'game/'
 };
 
 /*

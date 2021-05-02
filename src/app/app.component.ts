@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LanguageService } from './services/language.service';
 import { AuthService } from './services/auth.service';
+import { ThemesService } from './services/themes.service';
+import { SlideService } from './services/slide.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,9 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private languageService:LanguageService,
-    private auth:AuthService
+    private auth:AuthService,
+    private theme:ThemesService,
+    private slide:SlideService
   ) {
     this.initializeApp();
   }
@@ -27,8 +31,9 @@ export class AppComponent {
       this.statusBar.backgroundColorByHexString("#C70039");
       this.splashScreen.hide();
       this.auth.init();
-      
+      this.theme.setInitialAppTheme();      
       this.languageService.setInitialAppLanguage();
+      
     });
   }
 }

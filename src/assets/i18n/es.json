@@ -72,7 +72,12 @@
         "title":"Ajustes",
         "language":"Idioma",
         "Logout":"Cerrar sesión",
-        "close":"Eliminar mi cuenta"
+        "close":"Eliminar mi cuenta",
+        "dark":"Modo Oscuro",
+        "on":"Activado",
+        "off":"Desactivado",
+        "Theme":"Tema",
+        "Help":"Ayuda"
         
         
     },

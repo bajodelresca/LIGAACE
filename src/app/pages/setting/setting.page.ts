@@ -5,6 +5,7 @@ import { Player } from 'src/app/model/Player';
 import { AuthService } from 'src/app/services/auth.service';
 import { LanguageService } from 'src/app/services/language.service';
 import { PlayerfService } from 'src/app/services/playerf.service';
+import { ThemesService } from 'src/app/services/themes.service';
 import { UtilitiesService } from 'src/app/services/utilities.service';
 
 @Component({
@@ -13,18 +14,26 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
   styleUrls: ['./setting.page.scss'],
 })
 export class SettingPage implements OnInit {
+  themeMode = -1;
   lang: any;
+  themes:any;
+  lng='';
 
-  constructor(private playerf:PlayerfService,
-    private ui:UtilitiesService,
+
+  constructor(private playerf: PlayerfService,
+    private ui: UtilitiesService,
     private auth: AuthService,
     private router: Router,
     private language: LanguageService,
-    private alertController: AlertController) { }
+    private alertController: AlertController,
+    private theme: ThemesService) { this }
 
   ngOnInit() {
   }
-    lnga = this.language.selected;
+  ionViewDidEnter(){
+    this.initTheme();
+  }
+  lnga = this.language.selected;
   switchLanguage($event) {
     this.language.setLanguage($event.target.value);
     console.log($event.target.value);
@@ -39,11 +48,11 @@ export class SettingPage implements OnInit {
 
   public async removePlayer(player: Player) {
     await this.ui.showLoading();
-    player=this.auth.Player
+    player = this.auth.Player
     this.playerf
       .removePlayer(player)
       .then(async d => await this.logout())
-      .catch(async err => await this.ui.showToast(err.error,"danger"))
+      .catch(async err => await this.ui.showToast(err.error, "danger"))
       .finally(async () => {
         await this.ui.hideLoading();
       });
@@ -69,6 +78,42 @@ export class SettingPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  changeTheme($event, mode) {
+    console.log($event);
+    this.themeMode = mode;
+    if ($event.detail.checked) {
+      switch (mode) {
+        case 0:
+          document.body.classList.toggle('dark-theme');
+          break;
+
+      }
+    } else {
+      this.themeMode = -1;
+      document.body.classList.remove('dark-theme');
+    }
+
+  }
+
+
+  
+  switchtheme($event) {
+    this.theme.changeTheme($event);
+    console.log($event.target.value);
+  }
+  lngag = this.theme.selected;
+  switchthemes($event) {
+    this.theme.setThemes($event.target.value);
+    console.log($event.target.value);
+  }
+  initTheme(){
+    if(this.theme.selected=="dark-theme"){
+     this.lng="Activado"
+    }else{
+      this.lng="Desactivado"
+    }
   }
 
 }

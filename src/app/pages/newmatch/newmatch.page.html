@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titlefont">Nuevo Partido</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animate__animated animate__fadeInRight">
+  <h3 class="titlefont" style="color: white; text-align: center; padding-bottom: 30px; padding-top: 150px;">Creando nuevo partido...</h3>
+  
+  
+<form id="form">
+
+  <ion-item>
+    <ion-icon slot="start" name="home"></ion-icon>
+    <ion-label>Jornada</ion-label>
+    <ion-select value="notifications" interface="action-sheet">
+      <ion-select-option *ngFor="let jornada of jornadas">{{jornada}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+<ion-item>
+  <ion-icon slot="start" name="home"></ion-icon>
+  <ion-label>Local</ion-label>
+  <ion-select value="notifications" interface="action-sheet">
+    <ion-select-option *ngFor="let Team of listado">{{Team.name}}</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-icon slot="start" name="enter"></ion-icon>
+  <ion-label>Visitante</ion-label>
+  <ion-select value="notifications" interface="action-sheet">
+    <ion-select-option *ngFor="let Team of listado">{{Team.name}}</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-button (click)="sendForm()" expand="block">Crear</ion-button>
+</form>
+
+
+</ion-content>

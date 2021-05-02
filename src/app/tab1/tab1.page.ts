@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Team } from '../model/Team';
+import { SlideService } from '../services/slide.service';
 import { TeamfService } from '../services/teamf.service';
 import { UtilitiesService } from '../services/utilities.service';
 
@@ -10,13 +11,17 @@ import { UtilitiesService } from '../services/utilities.service';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   public listado:Array<Team>;
   con:number
 
   constructor(private teamf:TeamfService,
     private ui:UtilitiesService,
-    private router: Router) {}
+    private router: Router,
+    private sliders:SlideService) {}
+  ngOnInit(): void {
+    this.sliders.setInitialAppSlide();
+  }
     public async loadTeams() {
       await this.ui.showLoading();
       try {

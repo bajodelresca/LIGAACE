@@ -50,7 +50,15 @@ const routes: Routes = [
   {
     path: 'editmyplayer',
     loadChildren: () => import('./pages/editmyplayer/editmyplayer.module').then( m => m.EditmyplayerPageModule)
+  },  {
+    path: 'newmatch',
+    loadChildren: () => import('./pages/newmatch/newmatch.module').then( m => m.NewmatchPageModule)
+  },
+  {
+    path: 'match',
+    loadChildren: () => import('./pages/match/match.module').then( m => m.MatchPageModule)
   }
+
 ];
 @NgModule({
   imports: [

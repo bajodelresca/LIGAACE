@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titlefont">{{'TEAM.title' | translate}}</ion-title>
+    <ion-button (click)="this.exit()" fill="outline" color="danger">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-icon name="person-add"  slot="end" style="padding-right: 18px;" (click)="this.presentAlert()"></ion-icon>
+  </ion-toolbar>
+  <div class="header">
+    <div style="display: flex;justify-content: center;">
+      <ion-img class="teamimg3" style="justify-content: left; margin-top: 35px;;" src={{this.game.t[0].image}}></ion-img>
+      <ion-img class="teamimg3" style="justify-content: center;margin-top: 35px;" src="./assets/img/versus.png"></ion-img>
+      <ion-img class="teamimg3" style="justify-content: right;margin-top: 35px;" src={{this.game.t[1].image}}></ion-img>
+    </div>
+    <!-- <div style="display: flex;justify-content: center;">
+      <p style="justify-content: left; color: white;">{{this.game.t[0].name}}</p>
+      <p style="justify-content: center;width: 42%;"></p>
+      <p style="justify-content: right;color: white;">{{this.game.t[1].name}}</p>
+    </div> -->
+  </div>
+</ion-header>
+<ion-content style="height: 100%;">
+  <ion-slides pager="true" [options]="slideOpts" style="height: 100%;">
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;" ><h1 class="titlefont" style="color: white; text-align: center; padding-bottom: 30px;">LOCAL</h1></div>
+      <div style="width: 100%">
+          <ion-item style="width: 100%" *ngFor="let Player of this.game.t[0].repertorio">
+            <ion-avatar slot="start">
+              <ion-img src={{Player.image}}></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{Player.name}}</h2>
+              <h3>{{Player.games}} partidos jugados</h3>
+              <p>{{Player.goals}} goles {{Player.assists}} asistencias </p>
+            </ion-label>
+            <ion-icon name="eye" slot="end" class="see" (click)="this.openPlayer(Player)"></ion-icon>
+          </ion-item> 
+      </div>
+    </div>
+      
+      
+      
+    </ion-slide>
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;" ><h1 class="titlefont" style="color: white; text-align: center; padding-bottom: 30px;">VISITANTE</h1></div>
+      <div style="width: 100%">
+          <ion-item style="width: 100%" *ngFor="let Player of this.game.t[1].repertorio">
+            <ion-avatar slot="start">
+              <ion-img src={{Player.image}}></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{Player.name}}</h2>
+              <h3>{{Player.games}} partidos jugados</h3>
+              <p>{{Player.goals}} goles {{Player.assists}} asistencias </p>
+            </ion-label>
+            <ion-icon name="eye" slot="end" class="see" (click)="this.openPlayer(Player)"></ion-icon>
+          </ion-item> 
+      </div>
+    </div>   
+  </ion-slide> 
+  </ion-slides>
+</ion-content>

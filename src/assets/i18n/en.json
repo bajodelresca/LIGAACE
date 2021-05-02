@@ -72,7 +72,12 @@
         "title":"Settings",
         "language":"Language",
         "Logout":"Logout",
-        "close":"Delete my account"
+        "close":"Delete my account",
+        "dark":"Dark Mode",
+        "on":"Activated",
+        "off":"Disabled",
+        "Theme":"Theme",
+        "Help":"Help"
         
         
     },

@@ -1,4 +1,5 @@
 import { Player } from "./Player";
+import { Game } from "./Game";
 
 export interface Team{
     id?:number,
@@ -13,4 +14,5 @@ export interface Team{
     createdate:number;
     points:number
     players?:Player[];
+    matches?:Game[];
 }
