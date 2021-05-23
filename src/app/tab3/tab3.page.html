@@ -22,7 +22,7 @@
     
 
     <ion-item-sliding *ngFor="let Team of listado" >
-      <ion-item-options side="start" (click)="editTeam(Team)">
+      <ion-item-options side="start" (click)="editTeam(Team)" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
         <ion-item-option color="primary">
           <ion-icon slot="icon-only" name="create"></ion-icon>
         </ion-item-option>
@@ -41,7 +41,7 @@
         </ion-card-content>
       </ion-card> 
     </ion-item>
-      <ion-item-options side="end">
+      <ion-item-options side="end" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
         <ion-item-option color="danger" (click)="presentAlert(Team)">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
@@ -52,7 +52,7 @@
 
     
   </ion-list>
-  <ion-fab routerLink="/newteam" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab routerLink="/newteam" vertical="bottom" horizontal="end" slot="fixed" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

@@ -3,5 +3,5 @@ export interface Game{
     id:number,
     jornada:number,
     resultado?:string,   
-    teams?:Team[];
+    t?:Team[];
 }

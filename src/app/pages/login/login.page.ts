@@ -21,50 +21,51 @@ export class LoginPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private playerf: PlayerfService,
-    private ui:UtilitiesService,
-    private auth:AuthService,
+    private ui: UtilitiesService,
+    private auth: AuthService,
     private router: Router,
-    private menu:MenuController
-    ) {
+    private menu: MenuController
+  ) {
     this.existplayer = this.formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]     
+      password: ['', Validators.required]
 
     })
   }
   ngOnInit() {
-    
+
   }
   ionViewDidEnter(): void {
     this.menu.enable(false);
   }
-  
+
   ionViewDidLeave(): void {
     this.menu.enable(true);
   }
- 
-  
-  public async sendForm(){
+
+   //______________________________________________________________________FUNCION PARA LOGEARTE
+
+  public async sendForm() {
     await this.ui.showLoading();
     let shaObj = new jsSHA("SHA-256", "TEXT");
     shaObj.update(this.existplayer.get('password').value);
     let hash = shaObj.getHash("HEX");
-    let email=this.existplayer.get('email').value;
-    this.playerf.searchByCount(email,hash).then((respuesta)=>{
-      this.auth.login(respuesta).then(result=>{
-        if(result.id != null){
+    let email = this.existplayer.get('email').value;
+    this.playerf.searchByCount(email, hash).then((respuesta) => {
+      this.auth.login(respuesta).then(result => {
+        if (result.id != null) {
           this.ui.hideLoading();
           this.router.navigate(['']);
-        }else{
+        } else {
           this.ui.hideLoading();
-          this.ui.showToast("Los datos introducidos son incorrectos","danger");
+          this.ui.showToast("Los datos introducidos son incorrectos", "danger");
         };
       });
       this.existplayer.setValue({
-        email:'',
-        password:''
+        email: '',
+        password: ''
       })
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err);
 
     });

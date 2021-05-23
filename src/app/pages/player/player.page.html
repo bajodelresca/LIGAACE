@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="titlefont">{{'PLAYER.title' | translate}}</ion-title>
-    <ion-button (click)="this.exit()" fill="outline" color="danger">
-      <ion-icon name="arrow-back-circle-outline"></ion-icon>
-    </ion-button>
+    <ion-icon (click)="this.exit()" name="arrow-back-circle-outline" style="margin-left:18px;width: 25px;height: 25px; margin-top: 7px;"></ion-icon>
+    <ion-icon name="color-wand" style="padding-right: 18px;" slot="end" (click)="this.presentAlert(player)" *ngIf="this.admin=='yes2' && this.player.admin!='yes'"></ion-icon>
+    <ion-icon name="person-remove" style="padding-right: 18px;" slot="end" (click)="this.presentAlert2(player)" *ngIf="this.admin=='yes2' && this.player.admin=='yes'"></ion-icon>
   </ion-toolbar>
   <div class="header">
     <div class="avatar">

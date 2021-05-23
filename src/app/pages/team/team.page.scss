@@ -1,29 +1,26 @@
 ion-content {
-    
     position: relative;
     height: 100%;
     width: 100%;
 
     ion-button {
         margin-top: 1em;
-        margin-bottom: 1em
+        margin-bottom: 1em;
     }
 }
 
-
 ion-toolbar {
-    
 }
 
 ion-chip {
-    --background: #869B7C;
+    --background: #869b7c;
     --color: #fff;
 }
 .header {
     height: 200px; // 20vh;
     --background: none;
-    background: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)),url("/assets/img/vestuarios2.png") no-repeat center center / cover !important;;
-    
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+        url("/assets/img/vestuarios2.png") no-repeat center center / cover !important;
 
     .avatar {
         width: 160px; //40vw
@@ -37,17 +34,15 @@ ion-chip {
             display: block;
             border-radius: 50%;
             position: absolute;
-            bottom: calc(-1*(80px + 4px)); // -42px;
-            border: 8px solid #C70039;
-            background-color: #fff;
+            bottom: calc(-1 * (80px + 4px)); // -42px;
+            border: 8px solid #c70039;
+            background-color: black;
         }
     }
 }
 
 .card {
     margin: 0 auto;
-
-    
 }
 
 .card-body {
@@ -72,20 +67,25 @@ ion-chip {
             margin: 0 auto;
         }
     }
-    h3{
+    h3 {
         padding-top: 5px;
     }
-    ion-col{
-   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,869b7c+0,7db9e8+100&1+0,0+100 */
-background: -moz-linear-gradient(-45deg,  rgba(134,155,124,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  rgba(134,155,124,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  rgba(134,155,124,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#869b7c', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    ion-col {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,869b7c+0,7db9e8+100&1+0,0+100 */
+        background: -moz-linear-gradient(-45deg, rgba(134, 155, 124, 1) 0%, rgba(125, 185, 232, 0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+            -45deg,
+            rgba(134, 155, 124, 1) 0%,
+            rgba(125, 185, 232, 0) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+            135deg,
+            rgba(134, 155, 124, 1) 0%,
+            rgba(125, 185, 232, 0) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#869b7c', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-
-
-margin:10px;
-border-radius: 10px;
+        margin: 10px;
+        border-radius: 10px;
     }
 }

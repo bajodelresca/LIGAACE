@@ -16,8 +16,8 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
 export class SettingPage implements OnInit {
   themeMode = -1;
   lang: any;
-  themes:any;
-  lng='';
+  themes: any;
+  lng = '';
 
 
   constructor(private playerf: PlayerfService,
@@ -30,22 +30,24 @@ export class SettingPage implements OnInit {
 
   ngOnInit() {
   }
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.initTheme();
   }
+
+  //______________________________________________________________________FUNCION PARA CAMBIAR LENGUAJE
   lnga = this.language.selected;
   switchLanguage($event) {
     this.language.setLanguage($event.target.value);
     console.log($event.target.value);
   }
-
+  //______________________________________________________________________FUNCION PARA DESLOGEAR
   public async logout() {
     await this.auth.logout();
     if (!this.auth.isLogged()) {
       this.router.navigate(['/login'])
     }
   }
-
+  //______________________________________________________________________FUNCION BORRAR CUENTA
   public async removePlayer(player: Player) {
     await this.ui.showLoading();
     player = this.auth.Player
@@ -57,7 +59,7 @@ export class SettingPage implements OnInit {
         await this.ui.hideLoading();
       });
   }
-
+  //______________________________________________________________________FUNCION PARA ABRIR ALERT
   async presentAlert(player: Player) {
     const alert = await this.alertController.create({
       header: '¿Estás seguro de borrar tu cuenta?, esta cuenta no podrá ser recuperada',
@@ -79,7 +81,7 @@ export class SettingPage implements OnInit {
 
     await alert.present();
   }
-
+  //______________________________________________________________________FUNCION PARA CAMBIAR TEMA
   changeTheme($event, mode) {
     console.log($event);
     this.themeMode = mode;
@@ -98,7 +100,7 @@ export class SettingPage implements OnInit {
   }
 
 
-  
+  //______________________________________________________________________FUNCION PARA CAMBIAR TEMA
   switchtheme($event) {
     this.theme.changeTheme($event);
     console.log($event.target.value);
@@ -108,11 +110,13 @@ export class SettingPage implements OnInit {
     this.theme.setThemes($event.target.value);
     console.log($event.target.value);
   }
-  initTheme(){
-    if(this.theme.selected=="dark-theme"){
-     this.lng="Activado"
-    }else{
-      this.lng="Desactivado"
+
+  //______________________________________________________________________FUNCION PARA TEMA INICIAL
+  initTheme() {
+    if (this.theme.selected == "dark-theme") {
+      this.lng = "Activado"
+    } else {
+      this.lng = "Desactivado"
     }
   }
 

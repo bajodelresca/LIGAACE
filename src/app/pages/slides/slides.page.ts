@@ -8,13 +8,13 @@ import { NavController } from '@ionic/angular';
 })
 export class SlidesPage implements OnInit {
 
-  constructor(private nadCtrl:NavController) { }
+  constructor(private nadCtrl: NavController) { }
 
   ngOnInit() {
-    
-  }
-onClick(){
-  this.nadCtrl.navigateBack('');
 
-}
+  }
+  onClick() {
+    this.nadCtrl.navigateBack('');
+
+  }
 }

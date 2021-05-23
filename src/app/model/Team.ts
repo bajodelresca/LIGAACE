@@ -13,6 +13,6 @@ export interface Team{
     goalsc:number,
     createdate:number;
     points:number
-    players?:Player[];
+    repertorio?:Player[];
     matches?:Game[];
 }

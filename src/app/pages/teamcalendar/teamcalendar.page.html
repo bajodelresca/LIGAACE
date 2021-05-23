@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titlefont">
+      {{'MATCH.title' | translate}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item-sliding *ngFor="let Game of listado2">
+    <ion-item-options side="start">
+      <ion-item-option color="primary">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item>
+      <ion-card style="width: 100%;">
+        <div style="display: flex;justify-content: center;">
+          <ion-img class="teamimg3" style="justify-content: left;" src={{Game.t[0].image}}></ion-img>
+          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
+          <ion-img class="teamimg3" style="justify-content: right;" src={{Game.t[1].image}}></ion-img>
+        </div>
+        <ion-card-header>
+          <ion-card-subtitle>
+            <div style="display: flex;justify-content: center;">
+              <p style="justify-content: left;">{{Game.t[0].name}}</p>
+              <p style="justify-content: center;width: 38%;"></p>
+              <p style="justify-content: right;">{{Game.t[1].name}}</p>
+            </div>
+          </ion-card-subtitle>
+          <ion-card-title>Jornada {{Game.jornada}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-content>

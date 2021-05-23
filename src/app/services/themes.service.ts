@@ -11,6 +11,7 @@ export class ThemesService {
 
   constructor(private storage: NativeStorage) { }
 
+  //______________________________________________________________________FUNCION PARA TEMA INICIAL
   public setInitialAppTheme() {
     this.storage.getItem(TH_KEY).then(val => {
       if (val) {
@@ -22,7 +23,7 @@ export class ThemesService {
 
   }
 
-
+  //______________________________________________________________________FUNCION PARA CAMBIAR TEMA
   public setThemes(th) {
     console.log(th)
     if (th == 'dark-theme') {
@@ -30,7 +31,7 @@ export class ThemesService {
       document.body.classList.toggle('dark-theme');
       console.log(th)
       this.storage.setItem(TH_KEY, th);
-    } else if (th=='ligththeme') {
+    } else if (th == 'ligththeme') {
       document.body.classList.remove('dark-theme');
       document.body.classList.toggle('ligththeme');
       this.storage.setItem(TH_KEY, th);
@@ -39,6 +40,7 @@ export class ThemesService {
 
   }
 
+  //______________________________________________________________________FUNCION PARA CAMBIAR TEMA
 
   changeTheme($event) {
     console.log($event);

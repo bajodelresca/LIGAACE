@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint:'https://pruebaadrii898.herokuapp.com/',
+  endpoint:'https://api-ace.herokuapp.com/',
   apiPlayer:'player/',
   apiTeam:'team/',
   apiGame:'game/'

@@ -12,7 +12,7 @@ export class SlideService {
   selected = "";
 
   constructor(private storage: NativeStorage,
-    private route:Router) { }
+    private route: Router) { }
 
   public setInitialAppSlide() {
     this.storage.getItem(SLIDE).then(val => {
@@ -33,11 +33,11 @@ export class SlideService {
       console.log(th)
       this.storage.setItem(SLIDE, th);
     } else {
-      
+
     }
 
   }
 
 
-  
+
 }

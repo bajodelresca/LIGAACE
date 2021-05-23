@@ -135,6 +135,31 @@
         
         
         
+    },
+
+    "MATCHES":{
+        "title":"Encuentros",
+        "day":"Jornada"     ,
+        "old":"Finalizados"  
+        
+        
+    },
+    "MATCHINFO":{
+        "title":"Partido",
+        "home":"LOCAL",
+        "away":"VISITANTE"      
+        
+        
+    },
+    "NEWMATCH":{
+        "title":"Nuevo partido",
+        "text":"Creando nuevo partido...",
+        "home":"Local",
+        "away":"Visitante",
+        "day":"Jornada",
+        "crear":"CREAR"      
+        
+        
     }
 
 

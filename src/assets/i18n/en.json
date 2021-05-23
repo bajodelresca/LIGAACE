@@ -55,7 +55,7 @@
         "perdidos":"Lost",
         "empatados":"Draw",
         "jugados":"Played",
-        "goalsc":"against",
+        "goalsc":"Against",
         "player":"Players"
         
     },
@@ -135,5 +135,30 @@
         
         
         
+    },
+    "MATCHES":{
+        "title":"Matches",
+        "day":"Day",
+        "old":"Finished" 
+        
+        
+    },
+    "MATCHINFO":{
+        "title":"Match",
+        "home":"HOME",
+        "away":"AWAY"      
+        
+        
+    },
+    "NEWMATCH":{
+        "title":"New Match",
+        "text":"Creating new match...",
+        "home":"Home",
+        "away":"Away",
+        "day":"Day",
+        "crear":"CREATE"      
+        
+        
     }
+
 }

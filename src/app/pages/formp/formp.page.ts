@@ -19,7 +19,7 @@ export class FormpPage {
     private modal: ModalController,
     private formBuilder: FormBuilder,
     private navParams: NavParams,
-    private modalController:ModalController
+    private modalController: ModalController
   ) {
 
 
@@ -30,17 +30,18 @@ export class FormpPage {
       this.mode = 'Creating';
       this.player = {
         id: -1, // for autoincrement
-        email:"",
-        password:"",
+        email: "",
+        password: "",
         assists: -1,
         games: -1,
+        admin: '',
         goals: -1,
         image: '',
         mvp: -1,
         name: '',
         redcards: -1,
         yellowcards: -1,
-        
+
       };
     }
 
@@ -54,7 +55,7 @@ export class FormpPage {
         this.player.email,
         Validators.compose([Validators.maxLength(256)])
       )
-      
+
     });
   }
 

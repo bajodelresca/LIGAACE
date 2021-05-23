@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -52,6 +53,7 @@ export function createTranslateLoader(http: HttpClient) {
     UtilitiesService,
     HTTP,
     StatusBar,
+    Geolocation,
     SplashScreen,
     NativeStorage,
     Camera,

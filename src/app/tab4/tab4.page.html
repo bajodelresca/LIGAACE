@@ -19,7 +19,7 @@
     
 
     <ion-item-sliding *ngFor="let Player of listado">
-      <ion-item-options side="start" (click)="editPlayer(Player)">
+      <ion-item-options side="start" (click)="editPlayer(Player)" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
         <ion-item-option color="primary">
           <ion-icon slot="icon-only" name="create"></ion-icon>
         </ion-item-option>
@@ -35,7 +35,7 @@
         </ion-label>
         <ion-icon name="eye" slot="end" class="see" (click)="this.openPlayer(Player)"></ion-icon>
       </ion-item>
-      <ion-item-options side="end">
+      <ion-item-options side="end" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
         <ion-item-option color="danger" (click)="this.presentAlert(Player)">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>

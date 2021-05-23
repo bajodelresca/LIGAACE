@@ -13,12 +13,13 @@ export class PlayerfService {
 
   constructor(private http: HTTP,
     private modalController: ModalController) { }
+  //______________________________________________________________________FUNCION PARA CARGAR JUGADORES
 
-  public getPlayer(id?:number | string): Promise<Player[] | null> {
+  public getPlayer(id?: number | string): Promise<Player[] | null> {
     return new Promise((resolve, reject) => {
       let endpoint = environment.endpoint + environment.apiPlayer;
-      if(id){
-        endpoint+=id;
+      if (id) {
+        endpoint += id;
       }
       this.http.get(endpoint, {}, this.header)
         .then(d => {
@@ -35,10 +36,11 @@ export class PlayerfService {
     });
 
   }
+  //______________________________________________________________________FUNCION PARA CARGAR JUGADORES DE UN EQUIPO
 
-  public getPlayerTeam(id:number): Promise<Player[] | null> {
+  public getPlayerTeam(id: number): Promise<Player[] | null> {
     return new Promise((resolve, reject) => {
-      let endpoint = environment.endpoint + environment.apiPlayer+"team/"+id;
+      let endpoint = environment.endpoint + environment.apiPlayer + "team/" + id;
       this.http.get(endpoint, {}, this.header)
         .then(d => {
           if (d) {
@@ -61,39 +63,45 @@ export class PlayerfService {
 
     }
   }
-  public searchByName(value:string): Promise<Player[] | null> {
-    return this.getPlayer('search/' +value);
-  }
+  //______________________________________________________________________FUNCION PARA BUSCAR JUGADORES POR NOMBRE
 
-  public searchByCount(email:String,password:string): Promise<Player | null> {
-    return new Promise ((resolve,reject)=>{
-      const endpoint= environment.endpoint+environment.apiPlayer+"search/"+email+"/"+password;
-      this.http.get(endpoint,{},this.header)
-      .then(d=>{
-        if(d){
-          //console.log(d.data)
-          resolve(JSON.parse(d.data));
-        }else{
-          resolve(null);
-        }
-      }).catch(err=> reject(err));
+  public searchByName(value: string): Promise<Player[] | null> {
+    return this.getPlayer('search/' + value);
+  }
+  //______________________________________________________________________FUNCION PARA COMPROBAR SI LA CUENTA EXISTE
+
+
+  public searchByCount(email: String, password: string): Promise<Player | null> {
+    return new Promise((resolve, reject) => {
+      const endpoint = environment.endpoint + environment.apiPlayer + "search/" + email + "/" + password;
+      this.http.get(endpoint, {}, this.header)
+        .then(d => {
+          if (d) {
+            //console.log(d.data)
+            resolve(JSON.parse(d.data));
+          } else {
+            resolve(null);
+          }
+        }).catch(err => reject(err));
     });
   }
+  //______________________________________________________________________FUNCION PARA BUSCAR EMAIL
 
-  public searchByEmail(email:String): Promise<Player | null> {
-    return new Promise ((resolve,reject)=>{
-      const endpoint= environment.endpoint+environment.apiPlayer+"searching/"+email;
-      this.http.get(endpoint,{},this.header)
-      .then(d=>{
-        if(d){
-          console.log(d.data)
-          resolve(JSON.parse(d.data));
-        }else{
-          resolve(null);
-        }
-      }).catch(err=> reject(err));
+  public searchByEmail(email: String): Promise<Player | null> {
+    return new Promise((resolve, reject) => {
+      const endpoint = environment.endpoint + environment.apiPlayer + "searching/" + email;
+      this.http.get(endpoint, {}, this.header)
+        .then(d => {
+          if (d) {
+            console.log(d.data)
+            resolve(JSON.parse(d.data));
+          } else {
+            resolve(null);
+          }
+        }).catch(err => reject(err));
     });
   }
+  //______________________________________________________________________FUNCION PARA BORRAR JUGADORES
 
   public removePlayer(player: any): Promise<void> {
     const id: any = player.id ? player.id : player;
@@ -107,6 +115,7 @@ export class PlayerfService {
         .catch(err => reject(err));
     });
   }
+  //______________________________________________________________________FUNCION PARA CREAR JUGADORES
 
   public createPlayer(player: Player): Promise<void> {
     const endpoint = environment.endpoint + environment.apiPlayer;
@@ -124,6 +133,7 @@ export class PlayerfService {
       }
     });
   }
+  //______________________________________________________________________FUNCION PARA ACTUALIZAR JUGADORES
 
   public updatePlayer(player: Player): Promise<void> {
     const endpoint = environment.endpoint + environment.apiPlayer;
@@ -141,6 +151,9 @@ export class PlayerfService {
       }
     });
   }
+
+
+  //______________________________________________________________________FUNCION PARA ABRIR JUGADOR
 
 
   public async openPlayer(player: Player) {

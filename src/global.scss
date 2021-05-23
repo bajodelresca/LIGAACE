@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -26,82 +26,125 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~animate.css/animate.min.css";
 
+:root {
+  .icono {
+    --color-selected: #c70039;
+  }
+  .titlee {
+    text-align: center !important;
+  }
 
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .see {
+    color: #c70039;
+  }
 
+  .icontitle {
+    padding-left: 10px;
+  }
 
-:root{
-    
-    
-      .icono{
-        --color-selected:#C70039;
+  .avatarimg {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 100px;
+  }
+  .teamimg {
+    padding-top: 20px;
+    height: 250px;
+    width: 250px;
+  }
+  .teamimg3 {
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .teamimg2 {
+    height: 25px;
+    width: 25px;
+  }
+
+  .loginimg {
+    padding-top: 50px;
+    height: 250px;
+    width: 250px;
+  }
+
+  .ad {
+  }
+  .loader {
+    .loading-wrapper {
+      background-color: transparent;
+      box-shadow: none;
     }
-    .titlee{
-        text-align: center !important;
-            }
-            
-    ion-title {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 0 90px 1px;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-      }
-      .see{
-          color:#C70039;
-          
-          
-      }
-      
-      .icontitle{
-          padding-left: 10px;
-      }
+  }
 
-      .avatarimg{
-        margin-top: 20px;
-        margin-bottom: 20px;
-        height: 100px;
-        width: 100px;
-    }  
-    .teamimg{
+  .box {
+    margin: 0 auto;
+    width: 40px;
+    height: 140px;
+    // border: solid 1px black;
+    position: relative;
 
-        padding-top: 20px;
-        height: 250px;
-        width: 250px;
+    .shadow {
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background-color: grey;
+      bottom: 0;
+      border-radius: 100%;
+      transform: scaleX(0.8);
+      opacity: 0.6;
+      animation: shadowScale 1s linear infinite;
     }
-    .teamimg3{
+  }
+  .gravity {
+    width: 40px;
+    height: 40px;
+    animation: bounce 1s cubic-bezier(0.68, 0.35, 0.29, 0.54) infinite;
+  }
+  .ball {
+    width: 40px;
+    height: 40px;
+    background-image: url("./assets/img/soccer1.svg");
+    background-size: cover;
+    color: white;
+    animation: roll 0.6s linear infinite;
+  }
 
-        padding-top: 20px;
-        height: 100px;
-        width: 100px;
+  @keyframes roll {
+    0% {
     }
-
-    .teamimg2{
-
-        
-        height: 25px;
-        width: 25px;
+    100% {
+      transform: rotate(360deg);
     }
-    
-    .loginimg{
-
-        padding-top: 50px;
-        height: 250px;
-        width: 250px;
+  }
+  @keyframes bounce {
+    0% {
     }
-
-    .ad{
-        
-        
+    50% {
+      transform: translateY(100px);
     }
-    
-    
-
-    
-
-          
-    
+    100% {
+    }
+  }
+  @keyframes shadowScale {
+    0% {
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 0.8;
+    }
+    100% {
+    }
+  }
 }
-
-

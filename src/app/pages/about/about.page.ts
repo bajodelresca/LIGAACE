@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.page.scss'],
 })
 export class AboutPage implements OnInit {
-  
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  
+
 
 }

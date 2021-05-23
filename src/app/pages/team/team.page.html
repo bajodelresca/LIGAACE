@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="titlefont">{{'TEAM.title' | translate}}</ion-title>
-    <ion-button (click)="this.exit()" fill="outline" color="danger">
-      <ion-icon name="arrow-back-circle-outline"></ion-icon>
-    </ion-button>
-    <ion-icon name="person-add"  slot="end" style="padding-right: 18px;" (click)="this.presentAlert()"></ion-icon>
+    
+      <ion-icon (click)="this.exit()" name="arrow-back-circle-outline" style="margin-left:18px;width: 25px;height: 25px; margin-top: 7px;"></ion-icon>
+   
+    <ion-icon name="calendar"  slot="end" style="padding-right: 18px; margin-top: 1px;" (click)="this.openTeamCalendar(this.team)"></ion-icon>
+    <ion-icon name="person-add"  slot="end" style="padding-right: 18px; margin-top: 2px;" (click)="this.presentAlert()"></ion-icon>
   </ion-toolbar>
   <div class="header">
     <div class="avatar" (click)="this.setAvatar()">
@@ -51,7 +52,7 @@
           </ion-col>
           <ion-col style="display: flex; justify-content: center; align-items: center;text-align: center;">
             <h3>
-              <ion-img style="height: 25px; " src="./assets/img/cancelar.png"></ion-img>{{team.triedmatches}}<br>{{'TEAM.empatados' | translate}}
+              <ion-img style="height: 25px; " src="./assets/img/cancelar.png"></ion-img>{{team.tiedmatches}}<br>{{'TEAM.empatados' | translate}}
             </h3>
           </ion-col>
         </ion-row>
@@ -68,7 +69,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <h3 class="titlefont" style="color: black; text-align: center; padding-bottom: 30px;">{{'TEAM.player' | translate}}</h3>
+      <h3 class="titlefont" style="color: black; text-align: center; padding-bottom: 30px;" *ngIf="listado?.length">{{'TEAM.player' | translate}}</h3>
       <ion-item-sliding *ngFor="let Player of listado">
         <ion-item-options side="start" (click)="editPlayer(Player)">
           <ion-item-option color="primary">
@@ -81,8 +82,9 @@
           </ion-avatar>
           <ion-label>
             <h2>{{Player.name}}</h2>
-            <h3>{{Player.games}} partidos jugados</h3>
-            <p>{{Player.goals}} goles {{Player.assists}} asistencias </p>
+            <h3>{{Player.games}} {{'PLAYERS.games' | translate}}</h3>
+            <p>{{Player.goals}} {{'PLAYERS.goals' | translate}} {{Player.assists}} {{'PLAYERS.assists' | translate}}
+            </p>
           </ion-label>
           <ion-icon name="eye" slot="end" class="see" (click)="this.openPlayer(Player)"></ion-icon>
         </ion-item>

@@ -3,6 +3,7 @@ import { Team } from "./Team";
 export interface Player{
     id:number,
     email:string,
+    admin:string,
     password:string,
     assists?:number,
     games?:number,

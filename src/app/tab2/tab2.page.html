@@ -1,16 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="titlefont">
-      {{'MATCH.title' | translate}}
+      {{'MATCHES.title' | translate}}
     </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+    <ion-icon name="timer-outline"  slot="end" style="padding-right: 18px; margin-top: 2px;width: 25px;height: 25px;" routerLink="/oldmatches"></ion-icon>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item-sliding *ngFor="let Game of listado2">
+  <ng-container *ngFor="let Game of listado2" >
+  <ion-item-sliding *ngIf="Game.resultado==''">
     <ion-item-options side="start">
       <ion-item-option color="primary">
         <ion-icon slot="icon-only" name="create"></ion-icon>
@@ -31,203 +34,18 @@
               <p style="justify-content: right;">{{Game.t[1].name}}</p>
             </div>
           </ion-card-subtitle>
-          <ion-card-title>Jornada {{Game.jornada}}</ion-card-title>
+          <ion-card-title>{{'MATCHES.day' | translate}} {{Game.jornada}}</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-item>
     <ion-item-options side="end">
-      <ion-item-option color="danger">
+      <ion-item-option color="danger" (click)="presentAlert(Game)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-item-option>
     </ion-item-options>
-  </ion-item-sliding>
-  <!-- <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/atletico.png"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/atletico.png"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/atletico.png"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/atletico.png"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/atletico.png"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="primary">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item>
-      <ion-card style="width: 100%;">
-        <div style="display: flex;justify-content: center;">
-          <ion-img class="teamimg3" style="justify-content: left;" src="./assets/img/atletico.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: center;" src="./assets/img/versus.png"></ion-img>
-          <ion-img class="teamimg3" style="justify-content: right;" src="./assets/img/calvo.PNG"></ion-img>
-        </div>
-        <ion-card-header>
-          <ion-card-subtitle>
-            <div style="display: flex;justify-content: center;">
-              <p style="justify-content: left;">Rigogaming</p>
-              <p style="justify-content: center;width: 38%;"></p>
-              <p style="justify-content: right;">Rigogaming</p>
-            </div>
-          </ion-card-subtitle>
-          <ion-card-title>Jornada 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding> -->
-  <ion-fab routerLink="/newmatch" vertical="bottom" horizontal="end" slot="fixed">
+  </ion-item-sliding> 
+</ng-container>
+  <ion-fab routerLink="/newmatch" vertical="bottom" horizontal="end" slot="fixed" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

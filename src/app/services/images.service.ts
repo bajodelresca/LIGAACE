@@ -8,7 +8,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
   providedIn: 'root'
 })
 export class ImagesService {
-  myphoto:any;
+  myphoto: any;
 
   croppedImagepath = "";
   isLoading = false;
@@ -21,6 +21,7 @@ export class ImagesService {
   constructor(private camera: Camera,
     private transfer: FileTransfer,
     private file: File) { }
+  //______________________________________________________________________FUNCION FOTO DE CAMARA
 
   takePhoto() {
     const options: CameraOptions = {
@@ -38,13 +39,15 @@ export class ImagesService {
       // Handle error
     });
   }
+  //______________________________________________________________________FUNCION PARA COGER IMAGEN DE GALERIA
 
-  getImage() :Promise<void>{
+  getImage(): Promise<void> {
     const options: CameraOptions = {
       quality: 70,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      saveToPhotoAlbum: false
+      saveToPhotoAlbum: false,
+      encodingType: 1 //PNG, 0 JPEG
     }
 
     return this.camera.getPicture(options).then((imageData) => {
@@ -55,6 +58,7 @@ export class ImagesService {
       // Handle error
     });
   }
+  //______________________________________________________________________FUNCION PARA RECORTAR IMAGEN
 
   cropImage() {
     const options: CameraOptions = {

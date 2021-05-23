@@ -14,7 +14,7 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
   styleUrls: ['./newteam.page.scss'],
 })
 export class NewteamPage {
-  photo:any
+  photo: any
   public newteam: FormGroup;
   public data: Team;
 
@@ -26,7 +26,7 @@ export class NewteamPage {
     private router: Router,
     private menu: MenuController,
     private imaS: ImagesService,
-    private modalController:ModalController) {
+    private modalController: ModalController) {
     this.newteam = this.formBuilder.group({
       name: ['', Validators.required],
       createdate: ['', Validators.required]
@@ -34,44 +34,44 @@ export class NewteamPage {
     })
   }
 
- 
 
+  //______________________________________________________________________FUNCION ENVIAR FORMULARIO
   public async sendForm() {
-    await this.ui.showLoading();    
-        this.data = {
-          id: -1,
-          name: this.newteam.get('name').value,
-          image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcADIALgAyACAAVAByAGEAbgBzAGYAZQByACAAdwBpAHQAaAAgAHMAUgBHAEIAIABHAGEAbQB1AHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACMzMAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACgcHCAcGCggICAsKCgsOGBAODQ0OHRUWERgjHyUkIh8iISYrNy8mKTQpISIwQTE0OTs+Pj4lLkRJQzxINz0+O//bAEMBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIAMgAmwMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/Z",
-          games: 0,
-          points:0,
-          matcheswon: 0,
-          lostmatches: 0,
-          tiedmatches: 0,
-          goals: 0,
-          goalsc: 0,
-          createdate: this.newteam.get('createdate').value
-        }
-        this.teamf.createTeam(this.data).then((respuesta) => {
-          this.newteam.setValue({
-            name: '',            
-            createdate: ''
-          })
-          this.ui.hideLoading();
-          this.ui.showToast("Equipo creado con éxito", "success")          
-          this.router.navigate(['tab3'])
-        }).catch((err) => {
-        });
-      }
-      
-      
-
-        
-      
+    await this.ui.showLoading();
+    this.data = {
+      id: -1,
+      name: this.newteam.get('name').value,
+      image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcADIALgAyACAAVAByAGEAbgBzAGYAZQByACAAdwBpAHQAaAAgAHMAUgBHAEIAIABHAGEAbQB1AHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACMzMAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACgcHCAcGCggICAsKCgsOGBAODQ0OHRUWERgjHyUkIh8iISYrNy8mKTQpISIwQTE0OTs+Pj4lLkRJQzxINz0+O//bAEMBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIAMgAmwMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/Z",
+      games: 0,
+      points: 0,
+      matcheswon: 0,
+      lostmatches: 0,
+      tiedmatches: 0,
+      goals: 0,
+      goalsc: 0,
+      createdate: this.newteam.get('createdate').value
+    }
+    this.teamf.createTeam(this.data).then((respuesta) => {
+      this.newteam.setValue({
+        name: '',
+        createdate: ''
+      })
+      this.ui.hideLoading();
+      this.ui.showToast("Equipo creado con éxito", "success")
+      this.router.navigate([''])
+    }).catch((err) => {
+    });
+  }
 
 
 
-      public exit() {
-        this.modalController.dismiss();
-      }
+
+
+
+
+  //______________________________________________________________________FUNCION PARA CERRAR MODAL
+  public exit() {
+    this.modalController.dismiss();
+  }
 
 }

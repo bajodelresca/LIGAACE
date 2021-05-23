@@ -12,41 +12,41 @@ import { UtilitiesService } from '../services/utilities.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-  public listado:Array<Team>;
-  con:number
+  public listado: Array<Team>;
+  con: number
 
-  constructor(private teamf:TeamfService,
-    private ui:UtilitiesService,
+  constructor(private teamf: TeamfService,
+    private ui: UtilitiesService,
     private router: Router,
-    private sliders:SlideService) {}
+    private sliders: SlideService) { }
   ngOnInit(): void {
     this.sliders.setInitialAppSlide();
   }
-    public async loadTeams() {
-      await this.ui.showLoading();
-      try {
-        this.listado = await this.teamf.getTeamclasification();
-        await this.ui.hideLoading();
-      } catch (err) {
-        this.listado = null; //vista
-        await this.ui.hideLoading();
-        await this.ui.showToast(err.error,"danger");
-      }
-    }
 
-    async ionViewDidEnter(){
-      await this.loadTeams();
-      /*if(this.con==null){
-        this.navigate()
-        await this.loadTeams();
-      
-    }else{
-      await this.loadTeams();
-      }*/
-    }
+  //______________________________________________________________________FUNCION PARA CARGAR EQUIPOS
 
-    navigate(){
-      this.router.navigate(['/slides'])
-      this.con=1
+  public async loadTeams() {
+    await this.ui.showLoading();
+    try {
+      this.listado = await this.teamf.getTeamclasification();
+      await this.ui.hideLoading();
+    } catch (err) {
+      this.listado = null; //vista
+      await this.ui.hideLoading();
+      await this.ui.showToast(err.error, "danger");
     }
+  }
+
+  async ionViewDidEnter() {
+    await this.loadTeams();
+    /*if(this.con==null){
+      this.navigate()
+      await this.loadTeams();
+    
+  }else{
+    await this.loadTeams();
+    }*/
+  }
+
+
 }

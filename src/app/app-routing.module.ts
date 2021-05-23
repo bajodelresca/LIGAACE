@@ -50,14 +50,31 @@ const routes: Routes = [
   {
     path: 'editmyplayer',
     loadChildren: () => import('./pages/editmyplayer/editmyplayer.module').then( m => m.EditmyplayerPageModule)
-  },  {
+  },
+  {
     path: 'newmatch',
     loadChildren: () => import('./pages/newmatch/newmatch.module').then( m => m.NewmatchPageModule)
   },
   {
     path: 'match',
     loadChildren: () => import('./pages/match/match.module').then( m => m.MatchPageModule)
+  },
+  {
+    path: 'tab3',
+    loadChildren: () => import('./tab3/tab3.module').then( m => m.Tab3PageModule)
+  },  {
+    path: 'gamestats',
+    loadChildren: () => import('./pages/gamestats/gamestats.module').then( m => m.GamestatsPageModule)
+  },
+  {
+    path: 'teamcalendar',
+    loadChildren: () => import('./pages/teamcalendar/teamcalendar.module').then( m => m.TeamcalendarPageModule)
+  },
+  {
+    path: 'oldmatches',
+    loadChildren: () => import('./pages/oldmatches/oldmatches.module').then( m => m.OldmatchesPageModule)
   }
+
 
 ];
 @NgModule({

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>gamestats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-icon slot="start" name="home"></ion-icon>
+    <ion-label>Local</ion-label>
+    <ion-select value="equipo1" interface="action-sheet">
+      <ion-select-option *ngFor="let Team of game.t" value="{{Team.id}}">{{Team.name}}</ion-select-option>
+    </ion-select>
+  </ion-item> -->
+  <ion-slides pager="true" [options]="slideOpts" style="height: 100%; " *ngIf="slide1">
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;">
+          <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Datos del partido
+          </h1>
+        </div>
+        <div style="width: 100%">
+         
+          <form id="form" [formGroup]="finalresult" (ngSubmit)="this.setgamestats()">
+  
+            <ion-item>
+              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-input type="number" formControlName="equipo1" placeholder="Local"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="enter"></ion-icon>
+              <ion-input type="number" formControlName="equipo2" placeholder="Visitante"></ion-input>
+            </ion-item>
+  
+            <ion-button [disabled]="!finalresult.valid" type="submit" expand="block">Guardar resultado</ion-button>
+          </form>
+        </div>
+      </div>
+
+
+
+    </ion-slide>
+    
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;">
+          <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">{{this.game.t[0].name}}
+          </h1>
+        </div>
+        <div style="width: 100%">
+          <form id="form" [formGroup]="playerform" (ngSubmit)="this.setPlayerstats('1')">
+          <ion-item>
+            <ion-icon slot="start" name="body"></ion-icon>
+            <ion-label>Jugador</ion-label>
+            <ion-select formControlName="jugador" value="jugador" interface="action-sheet">
+              <ion-select-option *ngFor="let player of this.game.t[0].repertorio" value="{{player.id}}">{{player.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-icon slot="start" name="football"></ion-icon>
+            <ion-label>Acción</ion-label>
+            <ion-select formControlName="accion" value="accion" interface="action-sheet" placeholder="Acción">
+              <ion-select-option *ngFor="let estado of Estados" value="{{estado}}">{{estado}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-icon slot="start" name="stats-chart"></ion-icon>
+            <ion-input formControlName="cantidad" type="number" placeholder="Cantidad"></ion-input>
+          </ion-item>
+          <ion-button [disabled]="!playerform.valid" type="submit" expand="block">Crear</ion-button>
+          </form>
+        </div>
+      </div>
+      
+    </ion-slide>
+
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;">
+          <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">{{this.game.t[1].name}}
+          </h1>
+        </div>
+        <div style="width: 100%">
+         
+          <form id="form" [formGroup]="playerform" (ngSubmit)="this.setPlayerstats('2')">
+            <ion-item>
+              <ion-icon slot="start" name="body"></ion-icon>
+              <ion-label>Jugador</ion-label>
+              <ion-select formControlName="jugador" value="jugador" interface="action-sheet">
+                <ion-select-option *ngFor="let player of this.game.t[1].repertorio" value="{{player.id}}">{{player.name}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="football"></ion-icon>
+              <ion-label>Acción</ion-label>
+              <ion-select formControlName="accion" value="accion" interface="action-sheet" placeholder="Acción">
+                <ion-select-option *ngFor="let estado of Estados" value="{{estado}}">{{estado}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="stats-chart"></ion-icon>
+              <ion-input formControlName="cantidad" type="number" placeholder="Cantidad"></ion-input>
+            </ion-item>
+            <ion-button [disabled]="!playerform.valid" type="submit" expand="block">Crear</ion-button>
+            </form>
+        </div>
+      </div>
+      
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
