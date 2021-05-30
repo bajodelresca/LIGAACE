@@ -13,6 +13,7 @@ export class PlayerPage implements OnInit {
   @Input("player") player: Player;
   teamname: string
   admin: any;
+  idloged:any;
 
   constructor(private modalController: ModalController,
     private playerf: PlayerfService,
@@ -23,6 +24,8 @@ export class PlayerPage implements OnInit {
     console.log(this.player);
     this.teamName();
     this.admin = this.auth.getUser().admin;
+    this.idloged = this.auth.getUser().id;
+    console.log(this.idloged)
     console.log(this.admin)
     console.log(this.player.team)
   }

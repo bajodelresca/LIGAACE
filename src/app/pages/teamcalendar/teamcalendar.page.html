@@ -3,19 +3,18 @@
     <ion-title class="titlefont">
       {{'MATCH.title' | translate}}
     </ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
+    <ion-icon (click)="this.exit()" name="arrow-back-circle-outline" style="margin-left:18px;width: 25px;height: 25px; margin-top: 7px;"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item-sliding *ngFor="let Game of listado2">
-    <ion-item-options side="start">
+  <ng-container *ngFor="let Game of listado2" >
+  <ion-item-sliding *ngIf="Game.resultado==''">
+    <!-- <ion-item-options side="start">
       <ion-item-option color="primary">
         <ion-icon slot="icon-only" name="create"></ion-icon>
       </ion-item-option>
-    </ion-item-options>
+    </ion-item-options> -->
     <ion-item>
       <ion-card style="width: 100%;">
         <div style="display: flex;justify-content: center;">
@@ -35,10 +34,11 @@
         </ion-card-header>
       </ion-card>
     </ion-item>
-    <ion-item-options side="end">
+    <!-- <ion-item-options side="end">
       <ion-item-option color="danger">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-item-option>
-    </ion-item-options>
+    </ion-item-options> -->
   </ion-item-sliding>
+</ng-container>
 </ion-content>

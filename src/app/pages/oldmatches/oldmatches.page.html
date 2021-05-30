@@ -14,11 +14,11 @@
 <ion-content [fullscreen]="true">
   <ng-container *ngFor="let Game of listado2" >
   <ion-item-sliding *ngIf="Game.resultado!=''">
-    <ion-item-options side="start">
+    <!-- <ion-item-options side="start">
       <ion-item-option color="primary">
         <ion-icon slot="icon-only" name="create"></ion-icon>
       </ion-item-option>
-    </ion-item-options>
+    </ion-item-options> -->
     <ion-item (click)="this.openGame(Game)">
       <ion-card style="width: 100%;">
         <div style="display: flex;justify-content: center;">
@@ -38,11 +38,11 @@
         </ion-card-header>
       </ion-card>
     </ion-item>
-    <ion-item-options side="end">
+    <!-- <ion-item-options side="end">
       <ion-item-option color="danger" (click)="presentAlert(Game)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-item-option>
-    </ion-item-options>
+    </ion-item-options> -->
   </ion-item-sliding> 
 </ng-container>
   </ion-content>

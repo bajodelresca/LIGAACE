@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title class="titlefont">{{'PLAYER.title' | translate}}</ion-title>
     <ion-icon (click)="this.exit()" name="arrow-back-circle-outline" style="margin-left:18px;width: 25px;height: 25px; margin-top: 7px;"></ion-icon>
-    <ion-icon name="color-wand" style="padding-right: 18px;" slot="end" (click)="this.presentAlert(player)" *ngIf="this.admin=='yes2' && this.player.admin!='yes'"></ion-icon>
+    <ion-icon name="color-wand" style="padding-right: 18px;" slot="end" (click)="this.presentAlert(player)" *ngIf="this.admin=='yes2' && this.player.admin!='yes' && this.player.id!=this.idloged"></ion-icon>
     <ion-icon name="person-remove" style="padding-right: 18px;" slot="end" (click)="this.presentAlert2(player)" *ngIf="this.admin=='yes2' && this.player.admin=='yes'"></ion-icon>
   </ion-toolbar>
   <div class="header">

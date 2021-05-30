@@ -152,7 +152,6 @@ export class NewmatchPage implements OnInit {
 
 
     }).catch((err) => {
-      this.ui.hideLoading();
     });
   }
   //______________________________________________________________________FUNCION PARA ACTUALIZAR EQUIPO LOCAL

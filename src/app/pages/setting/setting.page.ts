@@ -61,8 +61,16 @@ export class SettingPage implements OnInit {
   }
   //______________________________________________________________________FUNCION PARA ABRIR ALERT
   async presentAlert(player: Player) {
+    player=this.auth.Player
+    console.log(player)
     const alert = await this.alertController.create({
-      header: '¿Estás seguro de borrar tu cuenta?, esta cuenta no podrá ser recuperada',
+      inputs: [
+        {
+          name: 'name1',
+          type: 'text'
+        },],
+
+      header: '¿Estás seguro de borrar tu cuenta?, introduce tu nombre',
       buttons: [{
         text: 'No',
         role: 'cancel',
@@ -72,9 +80,15 @@ export class SettingPage implements OnInit {
       },
       {
         text: 'Si',
-        handler: () => {
+        handler: (alertData) => {
+          console.log(alertData.name1)
           // AquÍ borramos el sitio en la base de datos
-          this.removePlayer(player);
+          if(alertData.name1==player.name){
+             this.removePlayer(player);
+          }else{
+            this.ui.showToast("El nombre no coincide", "danger");
+          }
+         
         }
       }]
     });

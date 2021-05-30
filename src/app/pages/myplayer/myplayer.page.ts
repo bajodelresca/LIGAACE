@@ -84,17 +84,13 @@ export class MyplayerPage implements OnInit {
 
   //______________________________________________________________________FUNCION ABRIR PANTALLA DE EDICIÓN DE JUGADOR
   public async editPlayer(_player: Player) {
-    const PlayerToBeUpdated = await this.ui.showModal(FormpPage, { Player: _player });
-    try {
-      if (PlayerToBeUpdated.data) {
-        // si no cierra
-        await this.ui.showLoading();
-        await this.playerf.updatePlayer(PlayerToBeUpdated.data);
-
+    const modal = await this.modalController.create({
+      component: FormpPage,
+      cssClass: 'my-custom-player',
+      componentProps: {
+        player: _player
       }
-    } catch (err) {
-      await this.ui.hideLoading();
-      await this.ui.showToast(err.error, "danger");
-    }
-  }
+    });
+    return await modal.present();
+}
 }

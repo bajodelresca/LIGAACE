@@ -22,11 +22,6 @@
     
 
     <ion-item-sliding *ngFor="let Team of listado" >
-      <ion-item-options side="start" (click)="editTeam(Team)" *ngIf="(this.admin=='yes')||(this.admin=='yes2')">
-        <ion-item-option color="primary">
-          <ion-icon slot="icon-only" name="create"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
       <ion-item (click)="this.openTeam(Team)">
       <ion-card style="width: 100%;">
         <div style="display: flex; justify-content: center;">

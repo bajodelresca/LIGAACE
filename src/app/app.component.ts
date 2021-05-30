@@ -32,6 +32,7 @@ export class AppComponent {
       this.splashScreen.hide();
       this.auth.init();
       this.theme.setInitialAppTheme();      
+      this.slide.isFirstTimeLoad()
       this.languageService.setInitialAppLanguage();
       
     });

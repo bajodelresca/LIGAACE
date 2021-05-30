@@ -14,13 +14,20 @@ import { UtilitiesService } from '../services/utilities.service';
 export class Tab1Page implements OnInit {
   public listado: Array<Team>;
   con: number
+  firstTime: boolean;
 
   constructor(private teamf: TeamfService,
     private ui: UtilitiesService,
     private router: Router,
     private sliders: SlideService) { }
   ngOnInit(): void {
-    this.sliders.setInitialAppSlide();
+    this.firstTime = this.sliders.firstTime;  
+
+    //if first time update first time 
+    if(this.firstTime){
+      this.sliders.saveFirstTimeLoad();
+    }
+    console.log(this.firstTime)
   }
 
   //______________________________________________________________________FUNCION PARA CARGAR EQUIPOS

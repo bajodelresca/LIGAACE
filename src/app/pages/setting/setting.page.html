@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content style="text-align: center;">  
-  <h3 class="titlefont">Idioma</h3>
+  <h3 class="titlefont" style="color: white;">Idioma</h3>
     <ion-item class="pad">
       <ion-icon name="language-sharp" style="padding-right: 15px;"></ion-icon>
       <ion-label>{{'SETTINGS.language' | translate}}</ion-label>
@@ -18,17 +18,17 @@
         <ion-select-option value="en">English</ion-select-option>
       </ion-select>
     </ion-item>
-    <h3 class="titlefont">{{'SETTINGS.Logout' | translate}}</h3>
+    <h3 class="titlefont" style="color: white;">{{'SETTINGS.Logout' | translate}}</h3>
     <ion-item (click)="this.logout()">
       <ion-icon name="exit" slot="start"></ion-icon>
       <ion-label>{{'SETTINGS.Logout' | translate}}</ion-label>
     </ion-item>
-    <h3 class="titlefont">{{'SETTINGS.close' | translate}}</h3>
+    <h3 class="titlefont" style="color: white;">{{'SETTINGS.close' | translate}}</h3>
     <ion-item (click)="this.presentAlert(Player)">
       <ion-icon name="trash" slot="start"></ion-icon>
       <ion-label>{{'SETTINGS.close' | translate}}</ion-label>
     </ion-item>
-    <h3 class="titlefont">{{'SETTINGS.Theme' | translate}}</h3>
+    <h3 class="titlefont" style="color: white;">{{'SETTINGS.Theme' | translate}}</h3>
     <ion-item class="pad">
       <ion-icon name="language-sharp" style="padding-right: 15px;"></ion-icon>
       <ion-label>{{'SETTINGS.dark' | translate}}</ion-label>
@@ -37,7 +37,7 @@
         <ion-select-option value="ligththeme">{{'SETTINGS.off' | translate}}</ion-select-option>
       </ion-select>
     </ion-item>
-    <h3 class="titlefont">{{'SETTINGS.Help' | translate}}</h3>
+    <h3 class="titlefont" style="color: white;">{{'SETTINGS.Help' | translate}}</h3>
     <ion-item routerLink="/slides">
       <ion-icon name="help-circle" slot="start"></ion-icon>
       <ion-label>{{'SETTINGS.Help' | translate}}</ion-label>

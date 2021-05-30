@@ -10,20 +10,30 @@ export class SlideService {
 
   themeMode = -1;
   selected = "";
+  firstTime: boolean;
 
   constructor(private storage: NativeStorage,
     private route: Router) { }
 
-  public setInitialAppSlide() {
-    this.storage.getItem(SLIDE).then(val => {
-      if (val) {
-        console.log(val)
-        this.setThemes(val)
-      }
-    });
+    saveFirstTimeLoad(): void {
+      this.storage.setItem('firstTime', true);
+    }
+  
+    isFirstTimeLoad(): void {
+      this.storage.getItem("firstTime").then((result) => {
+        if (result != undefined) {
+          this.firstTime = false;
+          console.log("false")
+        }
+        else {
+          this.firstTime = true;
+          console.log("true")
+        }
+      })
+    }
 
 
-  }
+  
 
 
   public setThemes(th) {

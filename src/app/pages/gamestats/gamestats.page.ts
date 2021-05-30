@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { id } from '@swimlane/ngx-datatable';
 import { Game } from 'src/app/model/Game';
 import { Player } from 'src/app/model/Player';
@@ -33,7 +35,9 @@ export class GamestatsPage implements OnInit {
     private ui: UtilitiesService,
     private teamf: TeamfService,
     private formBuilder: FormBuilder,
-    private gamef: GamefService) { }
+    private gamef: GamefService,
+    private router:Router,
+  private modalController:ModalController) { }
 
   ngOnInit() {    
     this.loading()
@@ -155,6 +159,7 @@ export class GamestatsPage implements OnInit {
       console.log(player)
       this.playerf.updatePlayer(player).then((respuesta) => {
         console.log("actualizados con exito")
+        
         this.slide1 = true;
         this.ui.hideLoading()
       }).catch((err) => {
@@ -178,7 +183,6 @@ export class GamestatsPage implements OnInit {
     await this.gamef.updateGame(game2).then((respuesta) => {
       console.log("Partido actualizado")
       console.log(this.game)
-      this.ui.hideLoading();
     }).catch((err) => {
       console.log(err);
       this.ui.hideLoading();
@@ -289,8 +293,6 @@ export class GamestatsPage implements OnInit {
 
     await this.teamf.updateTeam(this.team1).then((respuesta) => {
       this.setStats()
-      this.ui.hideLoading();
-      
     }).catch((err) => {
       console.log(err);
       this.ui.hideLoading();
@@ -298,6 +300,9 @@ export class GamestatsPage implements OnInit {
     });
     await this.teamf.updateTeam(this.team2).then((respuesta) => {
       this.setStats2()
+        this.modalController.dismiss();
+    
+
       this.ui.hideLoading();
     }).catch((err) => {
       console.log(err);
@@ -420,6 +425,7 @@ export class GamestatsPage implements OnInit {
     console.log(this.playertoupdate)
     await this.playerf.updatePlayer(this.playertoupdate).then((respuesta) => {
       console.log("Actualizando sus datos de jugador")
+      this.ui.showToast("Jugador actualizado con exito", "success");
       this.playerform.reset();
       this.ui.hideLoading();
     }).catch((err) => {

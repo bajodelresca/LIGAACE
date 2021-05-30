@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSearchbar, NavController } from '@ionic/angular';
+import { AlertController, IonSearchbar, ModalController, NavController } from '@ionic/angular';
 import { Player } from '../model/Player';
 import { FormpPage } from '../pages/formp/formp.page';
 import { AuthService } from '../services/auth.service';
@@ -20,7 +20,8 @@ export class Tab4Page implements OnInit {
     private playerf: PlayerfService,
     private ui: UtilitiesService,
     private alertController: AlertController,
-    private auth: AuthService) { }
+    private auth: AuthService,
+    private modalcontroller:ModalController) { }
 
   ngOnInit() {
 
@@ -122,19 +123,15 @@ export class Tab4Page implements OnInit {
   //______________________________________________________________________FUNCION PARA EDITAR JUGADORES
 
 
-  public async editPlayer(_player: Player) {
-    const PlayerToBeUpdated = await this.ui.showModal(FormpPage, { Player: _player });
-    try {
-      if (PlayerToBeUpdated.data) {
-        // si no cierra
-        await this.ui.showLoading();
-        await this.playerf.updatePlayer(PlayerToBeUpdated.data);
-        await this.loadPlayers();
+  public async editPlayer(player: Player) {
+    const modal = await this.modalcontroller.create({
+      component: FormpPage,
+      cssClass: 'my-custom-player',
+      componentProps: {
+        player: player
       }
-    } catch (err) {
-      await this.ui.hideLoading();
-      await this.ui.showToast(err.error, "danger");
-    }
+    });
+    return await modal.present();
   }
 
   public openPlayer(player: Player) {

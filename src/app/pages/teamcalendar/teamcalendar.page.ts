@@ -3,6 +3,7 @@ import { Team } from 'src/app/model/Team';
 import { Game } from 'src/app/model/Game';
 import { GamefService } from 'src/app/services/gamef.service';
 import { UtilitiesService } from 'src/app/services/utilities.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-teamcalendar',
@@ -15,7 +16,8 @@ export class TeamcalendarPage implements OnInit {
   data: any
 
   constructor(private gamef: GamefService,
-    private ui: UtilitiesService) { }
+    private ui: UtilitiesService,
+    private modalController:ModalController) { }
 
   ngOnInit() {
     this.loadGames();
@@ -34,6 +36,9 @@ export class TeamcalendarPage implements OnInit {
 
     })
 
+  }
+  public exit() {
+    this.modalController.dismiss();
   }
 
 }

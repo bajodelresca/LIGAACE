@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>gamestats</ion-title>
+    <ion-title>Datos del partido</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,34 +13,6 @@
     </ion-select>
   </ion-item> -->
   <ion-slides pager="true" [options]="slideOpts" style="height: 100%; " *ngIf="slide1">
-    <ion-slide>
-      <div style="display:block;width: 100%;height: 100%;">
-        <div style="width: 100%;margin-top: 10px;">
-          <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Datos del partido
-          </h1>
-        </div>
-        <div style="width: 100%">
-         
-          <form id="form" [formGroup]="finalresult" (ngSubmit)="this.setgamestats()">
-  
-            <ion-item>
-              <ion-icon slot="start" name="home"></ion-icon>
-              <ion-input type="number" formControlName="equipo1" placeholder="Local"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon slot="start" name="enter"></ion-icon>
-              <ion-input type="number" formControlName="equipo2" placeholder="Visitante"></ion-input>
-            </ion-item>
-  
-            <ion-button [disabled]="!finalresult.valid" type="submit" expand="block">Guardar resultado</ion-button>
-          </form>
-        </div>
-      </div>
-
-
-
-    </ion-slide>
-    
     <ion-slide>
       <div style="display:block;width: 100%;height: 100%;">
         <div style="width: 100%;margin-top: 10px;">
@@ -106,6 +78,33 @@
         </div>
       </div>
       
+    </ion-slide>
+    <ion-slide>
+      <div style="display:block;width: 100%;height: 100%;">
+        <div style="width: 100%;margin-top: 10px;">
+          <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Datos del partido
+          </h1>
+        </div>
+        <div style="width: 100%">
+         
+          <form id="form" [formGroup]="finalresult" (ngSubmit)="this.setgamestats()">
+  
+            <ion-item>
+              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-input type="number" formControlName="equipo1" placeholder="Local"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="enter"></ion-icon>
+              <ion-input type="number" formControlName="equipo2" placeholder="Visitante"></ion-input>
+            </ion-item>
+  
+            <ion-button [disabled]="!finalresult.valid" type="submit" expand="block">Guardar resultado</ion-button>
+          </form>
+        </div>
+      </div>
+
+
+
     </ion-slide>
   </ion-slides>
 

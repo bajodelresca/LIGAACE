@@ -1,18 +1,64 @@
 <ion-content>
   <ion-content>
-    <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide class="slide123">
-        <p class="titleslide">Consulta las estadisticas de todos nuestros jugadores</p>
-        <div class="prueb">
-          <ion-img class="teamimg" src="./assets/img/playertag.png"></ion-img>
+    <ion-slides pager="true" [options]="slideOpts" style="height: 100%; " pager="true" [options]="slideOpts" style="height: 100%; ">
+      <ion-slide>
+        <div style="display:block;width: 100%;height: 100%;">
+          <div style="width: 100%;margin-top: 10px;">
+            <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Clasificación
+            </h1>
+          </div>
+          <div style="width: 100%;padding: 3%;">
+          <ion-label>Aquí encontraras toda la información de como ha ido transcurriendo la liga, podrás ver los puntos, golaveraje y estadísticas de los partidos de los equipos participantes</ion-label>           
+          </div>
+      <div>
+        <ion-img style="justify-content: center;margin-top: 35px;" src="./assets/img/clasif.png"></ion-img>
+      </div>
         </div>
       </ion-slide>
       <ion-slide>
-        <h1>Slide 2</h1>
+        <div style="display:block;width: 100%;height: 100%;">
+          <div style="width: 100%;margin-top: 10px;">
+            <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Equipos
+            </h1>
+          </div>
+          <div style="width: 100%;padding: 3%;">
+          <ion-label>Podrás consultar toda la información y estadísticas de los equipos, consultar sus jugadores e incluso podras fichar por uno de ellos para luchar por el campeonato</ion-label>           
+          </div>
+      <div>
+        <ion-img style="justify-content: center;margin-top: 35px;" src="./assets/img/imgteam.png"></ion-img>
+      </div>
+        </div>
       </ion-slide>
       <ion-slide>
-        <h1>Slide 3</h1>
-        <ion-button (click)="this.onClick()" expand="block" fill="outline" color="dark"></ion-button>
+        <div style="display:block;width: 100%;height: 100%;">
+          <div style="width: 100%;margin-top: 10px;">
+            <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Jugadores
+            </h1>
+          </div>
+          <div style="width: 100%;padding: 3%;">
+          <ion-label>Sigue de cerca a tu jugador favorito, informate sobre sus goles y acciones durante los partidos y enterate de todo lo que ocurre sobre el campo</ion-label>           
+          </div>
+      <div>
+        <ion-img style="justify-content: center;margin-top: 35px;" src="./assets/img/imgplay.png"></ion-img>
+      </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div style="display:block;width: 100%;height: 100%;">
+          <div style="width: 100%;margin-top: 10px;">
+            <h1 class="titlefont" style="text-align: center; padding-bottom: 30px;">Partidos
+            </h1>
+          </div>
+          <div style="width: 100%;padding: 3%;">
+          <ion-label>Aquí es donde podrás ver todos los partidos que estan por jugar y así estar atento al calendario de tu equipo favorito, también podras ver un registro de los partidos jugados</ion-label>           
+          </div>
+      <div>
+        <ion-img style="justify-content: center;margin-top: 35px;" src="./assets/img/imggam.png"></ion-img>
+      </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <ion-button (click)="this.onClick()" expand="block" color="dark">Continuar</ion-button>
       </ion-slide>
     </ion-slides>
   </ion-content>

@@ -159,6 +159,19 @@
         "crear":"CREATE"      
         
         
+    },
+
+    "GAMESTATS":{
+        "title":"Ending the match",
+        "text":"Match data",
+        "home":"Home",
+        "away":"Away",
+        "day":"Day",
+        "crear":"CREATE"      
+        
+        
     }
+
+
 
 }

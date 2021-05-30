@@ -158,4 +158,3 @@ export class MenuComponent implements AfterViewInit {
   }
 
 }
-

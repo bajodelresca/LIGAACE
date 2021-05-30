@@ -137,7 +137,8 @@ export class Tab3Page {
 
   //______________________________________________________________________FUNCION PARA ABRIR ALERT
   async presentAlert(team: Team) {
-    const alert = await this.alertController.create({
+    if(team.matches.length===0){
+       const alert = await this.alertController.create({
       header: '¿Estás seguro de borrar a ' + team.name + '?',
       buttons: [{
         text: 'No',
@@ -156,6 +157,22 @@ export class Tab3Page {
     });
 
     await alert.present();
+  }else{
+    const alerta = await this.alertController.create({
+      header: 'Aviso',
+      message: 'No puede eliminar un equipo que tiene partidos pendientes',
+      buttons:  [{
+        text: 'Aceptar',
+        role: 'cancel',
+        handler: () => {
+          // Ha respondido que no así que no hacemos nada
+        }
+      }]
+    });
+    await alerta.present();
   }
+    }
+    
+   
 }
 
